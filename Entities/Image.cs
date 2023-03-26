@@ -6,5 +6,6 @@ public class Image
     public string ImageUrl { get; set; }
     public string ImageDescription { get; set; }
     
-    public ProductVariation Variation { get; set; }
+    public ProductVariation ProductVariation { get; set; }
+    public int ProductVariationId { get; set; }
 }
