@@ -16,6 +16,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<ProductVariation> ProductVariations { get; set; }
     public DbSet<Review> Reviews { get; set; }
     public DbSet<Size> Sizes { get; set; }
+    public DbSet<Cart> Carts { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -42,5 +43,9 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<Category>()
             .Property(c => c.Name)
             .IsRequired();
+
+        modelBuilder.Entity<Cart>()
+            .HasMany(c => c.ProductVariations)
+            .WithMany(pv => pv.Carts);
     }
 }

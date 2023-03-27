@@ -13,4 +13,5 @@ public class ProductVariation
     public int ImageId { get; set; }
     public Product Product { get; set; }
     public int ProductId { get; set; }
+    public List<Cart>? Carts { get; set; }
 }
